@@ -1,5 +1,5 @@
 
-function createPassword(length) {
+function createPassword(length=8) {
   let password = ''; 
   const chars = "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   let passwordLength = length;
@@ -17,6 +17,12 @@ function createPassword(length) {
 
 }
 
-createPassword(5);
-createPassword(10);
-createPassword(124);
+document.getElementById('generate').addEventListener('click',createPassword );
+
+var length = Number(prompt("Enter a password length between 8 and 128")),
+  chars = prompt("Enter a character type: special, numeric, uppercase, lowercase."),
+
+  password = createPassword();
+  document.getElementById("password").value = password;
+
+
