@@ -1,3 +1,4 @@
+
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 //Character sets
@@ -22,22 +23,31 @@ if (passwordLengthUser > 128) {
   alert("Password must be below 128 Characters");
   return ""
   }
+  
   //  confirm boolean for lowercase "yes or no"
 var lowercaseCharactersChoice = confirm("Would you like for there to be lowercase letters in your password?");
 if (lowercaseCharactersChoice) {
 passwordchar += charsetLower;
 }
+
 //  confirm boolean for uppercase "yes or no"
-var uppercaseCharactersChoice = confirm("How about a few uppercase letters?");
+var uppercaseCharactersChoice = confirm("Would you like uppercase letters?");
 if (uppercaseCharactersChoice) {
 passwordchar += charsetUpper;
 }
 
+//confirm boolean for numerical characters
+var numericalCharactersChoice=confirm('Would you like to use numbers in your password?')
+if(numericalCharactersChoice){
+  passwordchar+=charsetNumber;
 }
 
 
-// Add event listener to generate button
+}
+//generates password on click of "generate password btn"
 generateBtn.addEventListener("click", generatePassword);
+// Add event listener to generate button
+
 
 //Password Character Criteria Prompts
 
