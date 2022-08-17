@@ -11,8 +11,12 @@ function createPassword(length) {
     password += chars[array[i] % chars.length]
 
   }
+  console.log(password)
+  return password;
 
 
 }
 
 createPassword(5);
+createPassword(10);
+createPassword(124);
