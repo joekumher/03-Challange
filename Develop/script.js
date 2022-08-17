@@ -7,11 +7,9 @@ function createPassword(length) {
   const array = new Uint32Array(length);
   window.crypto.getRandomValues(array);
 
-
-
-
-
-
+  console.log(array);
 
 
 }
+
+createPassword(5);
