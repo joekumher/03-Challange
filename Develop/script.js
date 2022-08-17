@@ -10,10 +10,10 @@ var charsetNumber = "0123456789";
 function generatePassword(Length) {
   var password = '';
   var passwordchar ="";
-
-  var passwordLengthUser = prompt("How long would you like your password to be? It must be between 8-124 character.");
+//creates prompt for number of desired character
+  var passwordLengthUser = prompt("How long would you like your password to be? It must be between 8-128 character.");
   passwordLengthUser = parseInt(passwordLengthUser);
-
+// creates alerts for non fulfilled min max
 if (passwordLengthUser < 8) {
 alert("Password must have more than 7 characters!");
 return ("");
@@ -22,6 +22,16 @@ if (passwordLengthUser > 128) {
   alert("Password must be below 128 Characters");
   return ""
   }
+  //  confirm boolean for lowercase "yes or no"
+var lowercaseCharactersChoice = confirm("Would you like for there to be lowercase letters in your password?");
+if (lowercaseCharactersChoice) {
+passwordchar += charsetLower;
+}
+//  confirm boolean for uppercase "yes or no"
+var uppercaseCharactersChoice = confirm("How about a few uppercase letters?");
+if (uppercaseCharactersChoice) {
+passwordchar += charsetUpper;
+}
 
 }
 
