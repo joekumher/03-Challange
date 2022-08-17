@@ -1,37 +1,14 @@
+// Assignment Code
+var generateBtn = document.querySelector("#generate");
 
-function createPassword(length=8) {
-  let password = ''; 
-  const lowercaseChar = "abcdefghijklmnopqrstuvwxyz";
-  const uppercaseChar = "ABCDEFGHIJKLMNOPQRSTUZWXYZ";
-  const numericalChar = "0123456789";
-  const specialChar = "!#$%&'()*+-./:;<=>?@[\^_`{|}~";
-  let passwordLength = length;
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
 
-  const array = new Uint32Array(length);
-  window.crypto.getRandomValues(array);
-
-  for (i=0; i<length; i++) {
-    password += chars[array[i] % chars.length]
-
-  }
-  console.log(password)
-  return password;
-
+  passwordText.value = password;
 
 }
 
-
-password = createPassword();
-document.getElementById("password").value = password;
-
-document.getElementById('generate').addEventListener('click',createPassword );
-
-var length = Number(prompt("Enter a password length between 8 and 128")),
-
-  chars = prompt("Enter a character type: special, numeric, uppercase, lowercase.");
-
-  
-
- 
-
-
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
