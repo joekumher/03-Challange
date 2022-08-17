@@ -1,7 +1,10 @@
 
 function createPassword(length=8) {
   let password = ''; 
-  const chars = "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const lowercaseChar = "abcdefghijklmnopqrstuvwxyz";
+  const uppercaseChar = "ABCDEFGHIJKLMNOPQRSTUZWXYZ";
+  const numericalChar = "0123456789";
+  const specialChar = "!#$%&'()*+-./:;<=>?@[\^_`{|}~";
   let passwordLength = length;
 
   const array = new Uint32Array(length);
@@ -17,12 +20,18 @@ function createPassword(length=8) {
 
 }
 
+
+password = createPassword();
+document.getElementById("password").value = password;
+
 document.getElementById('generate').addEventListener('click',createPassword );
 
 var length = Number(prompt("Enter a password length between 8 and 128")),
-  chars = prompt("Enter a character type: special, numeric, uppercase, lowercase."),
 
-  password = createPassword();
-  document.getElementById("password").value = password;
+  chars = prompt("Enter a character type: special, numeric, uppercase, lowercase.");
+
+  
+
+ 
 
 
