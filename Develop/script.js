@@ -7,7 +7,10 @@ function createPassword(length) {
   const array = new Uint32Array(length);
   window.crypto.getRandomValues(array);
 
-  console.log(array);
+  for (i=0; i<length; i++) {
+    password += chars[array[i] % chars.length]
+
+  }
 
 
 }
