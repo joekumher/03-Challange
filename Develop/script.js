@@ -23,7 +23,7 @@ if (passwordLengthUser > 128) {
   alert("Password must be below 128 Characters");
   return ""
   }
-  
+
   //  confirm boolean for lowercase "yes or no"
 var lowercaseCharactersChoice = confirm("Would you like for there to be lowercase letters in your password?");
 if (lowercaseCharactersChoice) {
@@ -42,6 +42,11 @@ if(numericalCharactersChoice){
   passwordchar+=charsetNumber;
 }
 
+//confirm boolean for special characters
+var specialCharactersChoice=confirm('Would you like to include special characters?')
+if(specialCharactersChoice){
+  passwordchar+=charsetSpecial;
+}
 
 }
 //generates password on click of "generate password btn"
