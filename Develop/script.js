@@ -18,6 +18,10 @@ if (passwordLengthUser < 8) {
 alert("Password must have more than 7 characters!");
 return ("");
 }
+if (passwordLengthUser > 128) {
+  alert("Password must be below 128 Characters");
+  return ""
+  }
 
 }
 
