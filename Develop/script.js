@@ -7,10 +7,17 @@ var charsetUpper = "ABCDEFGHIJKLMNOPQRSTUZWXYZ";
 var charsetLower = "abcdefghijklmnopqrstuvwxyz";
 var charsetSpecial =  "!#$%&'()*+-./:;<=>?@[_`{|}~";
 var charsetNumber = "0123456789";
+
+
 // Password Generation
 function generatePassword(Length) {
   var password = '';
   var passwordchar ="";
+
+
+
+
+
 //creates prompt for number of desired character
   var passwordLengthUser = prompt("How long would you like your password to be? It must be between 8-128 character.");
   passwordLengthUser = parseInt(passwordLengthUser);
@@ -48,16 +55,20 @@ if(specialCharactersChoice){
   passwordchar+=charsetSpecial;
 }
 
+for (var i=0;i<passwordLengthUser;i++){
+  password=passwordchar[Math.floor(Math.random())*passwordchar.length]
 }
+}
+
+
 //generates password on click of "generate password btn"
 generateBtn.addEventListener("click", generatePassword);
-// Add event listener to generate button
 
 
-//Password Character Criteria Prompts
 
-//Password Length Prompts plus under-min and over-max alerts
 
+//Left to do
 //Display Generated Password in Text Area
+//random number generator
 
 
